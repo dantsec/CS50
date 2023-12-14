@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Code Trivia!</title>
+
+        <script>
+            function checkMultipleChoiceAnswer(selectedOption) {
+                var correctOption = "optionB";
+
+                if (selectedOption === correctOption) {
+                    document.getElementById(selectedOption).style.backgroundColor = "green";
+                    document.getElementById("resultMultipleChoice").innerText = "Correto!";
+                } else {
+                    document.getElementById(selectedOption).style.backgroundColor = "red";
+                    document.getElementById("resultMultipleChoice").innerText = "Incorreto";
+                }
+            }
+
+            function checkFreeResponseAnswer() {
+                var userAnswer = document.getElementById("freeResponseInput").value;
+                var correctAnswer = "JavaScript";
+
+                if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+                    document.getElementById("freeResponseInput").style.backgroundColor = "green";
+                    document.getElementById("resultFreeResponse").innerText = "Correto!";
+                } else {
+                    document.getElementById("freeResponseInput").style.backgroundColor = "red";
+                    document.getElementById("resultFreeResponse").innerText = "Incorreto";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="jumbotron">
+            <h1>Code Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice</h2>
+
+                <hr>
+
+                <h3 id="multipleChoiceQuestion">Qual é a linguagem de programação mais popular?</h3>
+                <button id="optionA" onclick="checkMultipleChoiceAnswer('optionA')">Python</button>
+                <button id="optionB" onclick="checkMultipleChoiceAnswer('optionB')">JavaScript</button>
+                <button id="optionC" onclick="checkMultipleChoiceAnswer('optionC')">Java</button>
+
+                <p id="resultMultipleChoice"></p>
+            </div>
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+
+                <hr>
+
+                <h3 id="freeResponseQuestion">Qual é a linguagem de programação usada para desenvolvimento web no lado do cliente?</h3>
+                <input type="text" id="freeResponseInput">
+                <button onclick="checkFreeResponseAnswer()">Confirmar</button>
+
+                <p id="resultFreeResponse"></p>
+            </div>
+        </div>
+    </body>
+</html>

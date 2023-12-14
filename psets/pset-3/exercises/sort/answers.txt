@@ -1,0 +1,11 @@
+sort1 uses: bubble sort
+
+How do you know?: sort1 is better only when list is already sorted
+
+sort2 uses: merge sort
+
+How do you know?: sort2 have the best time in all tests
+
+sort3 uses: selection sort
+
+How do you know?: sort3 is in "mid" and is worst than bubble sort only when list is already sorted

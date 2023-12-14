@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>
+            search
+        </title>
+    </head>
+    <body>
+        <form onsubmit="greet(); return false;">
+            <input autocomplete="off" autofocus id="name" placeholder="What's your name?" type="text">
+            <input type="submit" value="Greet Me">
+        </form>
+
+        <script>
+            function greet() {
+                let name = document.querySelector('#name').value;
+                alert('hello, ' + name);
+            }
+
+            document.querySelector('form').addEventListener('submit', greet);
+
+            /*
+                @ add event @
+
+                function listen() { document.querySelector('form').addEventListener('submit', greet) }
+                document.addEventListener('DOMContentLoader', listen);
+
+                @ same as @
+                document.addEventListener('DOMContentLoader', function() {
+                    document.querySelector('form').addEventListener('submit', greet);
+                });
+            */
+        </script>
+    </body>
+</html>
